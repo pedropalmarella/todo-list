@@ -14,7 +14,7 @@ function renderTask() {
   tasks.map((task) => {
     //Creating and rendering a new task
     let taskElement = document.createElement("span");
-    taskElement.classList.add("task-text");
+    taskElement.classList.add("task-member");
     let taskText = document.createTextNode(task);
     taskElement.appendChild(taskText);
     listElement.appendChild(taskElement);
@@ -25,7 +25,7 @@ function renderTask() {
     //Creating and rendering the delete button (into the span task)
     let deleteButton = document.createElement("button");
     deleteButton.setAttribute("onclick", `deleteTask(${position})`);
-    let deleteText = document.createTextNode("Delete");
+    let deleteText = document.createTextNode("DONE!");
     deleteButton.appendChild(deleteText);
     taskElement.appendChild(deleteButton);
 

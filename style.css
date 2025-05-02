@@ -9,14 +9,17 @@ body {
   background-color: #1a1a1a;
   width: 100%;
   height: 100vh;
+  /* Garante que o body ocupe toda a altura da viewport */
   color: #FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Alinha o conteúdo ao topo */
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
+  /* Permite rolagem vertical */
 }
 
 h1 {
@@ -28,11 +31,13 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* Alinha o conteúdo ao topo */
   width: 100%;
   min-width: 800px;
-  /* max-width: 800px; */
-  height: 100vh;
+  margin: auto;
   background-color: #1a1a1a;
+  flex-grow: 1;
+  /* Permite que o contêiner cresça para ocupar o espaço disponível */
 }
 
 #first-box {
@@ -84,29 +89,33 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Alinha as tasks ao topo */
   gap: 30px;
   padding: 15px;
   background-color: #2d224c;
   width: 50%;
-  /* max-width: 100%; */
   border-radius: 10px;
+  max-height: 400px;
+  /* Limite de altura para o container */
+  overflow-y: auto;
+  /* Permite rolagem interna */
 }
 
-.task-text {
+#register {
+  background-color: #FFF;
+}
+
+.task-member {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  display: inline-block;
-  max-width: 100%;
+  width: 100%;
   word-wrap: break-word;
-  /* overflow-wrap: break-word; */
-  /* white-space: normal; */
 }
 
-span button {
-  margin-left: 10px;
+.task-member button {
+  margin-left: auto;
   height: 40px;
   padding: 10px;
   color: #FFF;
@@ -118,9 +127,15 @@ span button {
 
 span button:hover {
   cursor: cell;
-  background-color: #6366f1;
+  background-color: green;
   transform: translateY(-2px);
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+}
+
+footer {
+  display: flex;
+  height: 30px;
+  margin: 20px 0;
 }
 
 footer a {
@@ -130,8 +145,9 @@ footer a {
   align-items: center;
   text-decoration: none;
   color: #FFF;
-  margin-bottom: 10px;
+  /* margin: 10px 0; */
   transition: all 0.3s ease;
+
 }
 
 footer a:hover {
@@ -157,7 +173,7 @@ footer img {
     width: 90%;
   }
 
-  .task-text {
+  .task-member {
     width: 80%;
     flex-direction: column;
     align-items: center;
@@ -165,7 +181,7 @@ footer img {
     text-align: center;
   }
 
-  span button {
+  .task-member button {
     width: 100%;
     margin-left: 0;
     margin-top: 10px;
